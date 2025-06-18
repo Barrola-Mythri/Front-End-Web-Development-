@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MITS - Micro Information Technology Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #applyBanner {
+      position: sticky;
+      top: 0;
+      left: 0;
+      background-color: #2563eb;
+      color: white;
+      padding: 10px 20px;
+      z-index: 50;
+      font-weight: bold;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #1e40af;
+      color: white;
+      transition: left 0.3s ease;
+      z-index: 100;
+      padding: 20px;
+    }
+
+    .sidebar.open {
+      left: 0;
+    }
+
+    .hamburger {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 101;
+      cursor: pointer;
+      background: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #1e40af;
+      margin: 4px 0;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 99;
+    }
+
+    .overlay.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="hamburger" onclick="toggleSidebar()" aria-label="Toggle Menu">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <h2 class="text-2xl font-bold mb-4">Menu</h2>
+    <ul class="space-y-3">
+      <li><a href="#" class="hover:underline">Internship Application</a></li>
+      <li><a href="#" class="hover:underline">Offer Letter Generation</a></li>
+      <li><a href="#" class="hover:underline">Certificate Verification</a></li>
+      <li><a href="#" class="hover:underline">Team Join Form</a></li>
+      <li><a href="#" class="hover:underline">Contact Info</a></li>
+    </ul>
+  </div>
+
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <div id="applyBanner">🚀 Apply for Internship</div>
+
+  <header class="bg-blue-700 text-white p-6 text-center shadow-md">
+    <h1 class="text-4xl font-bold">Micro Information Technology Services (MITS)</h1>
+    <p class="text-lg mt-2">Empowering future tech leaders through education and innovation.</p>
+  </header>
+
+  <section class="p-6 text-center">
+    <h2 class="text-2xl font-semibold mb-4">Our Mission</h2>
+    <p class="max-w-2xl mx-auto text-gray-700">
+      At MITS, we bridge academic learning and real-world experience with internships, coding tutorials, and projects.
+    </p>
+  </section>
+
+  <section class="p-6">
+    <h2 class="text-2xl font-semibold mb-4 text-center">Affiliated Universities</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 justify-items-center text-center">
+      <div>
+        <img src="images/oxford.png" alt="Oxford University" class="h-20 shadow rounded">
+        <p class="mt-2 font-medium">Oxford University</p>
+      </div>
+      <div>
+        <img src="images/iitkaragpar.png" alt="IIT Kharagpur" class="h-20 shadow rounded">
+        <p class="mt-2 font-medium">IIT Kharagpur</p>
+      </div>
+      <div>
+        <img src="images/iitkanpur.png" alt="IIT Kanpur" class="h-20 shadow rounded">
+        <p class="mt-2 font-medium">IIT Kanpur</p>
+      </div>
+      <div>
+        <img src="images/iitbombay.png" alt="IIT Bombay" class="h-20 shadow rounded">
+        <p class="mt-2 font-medium">IIT Bombay</p>
+      </div>
+      <div>
+        <img src="images/annauniversity.png" alt="Anna University" class="h-20 shadow rounded">
+        <p class="mt-2 font-medium">Anna University</p>
+      </div>
+      <div>
+        <img src="images/jntu.png" alt="JNTU Hyderabad" class="h-20 shadow rounded">
+        <p class="mt-2 font-medium">JNTU Hyderabad</p>
+      </div>
+      <div>
+        <img src="images/vit.png" alt="VIT University" class="h-20 shadow rounded">
+        <p class="mt-2 font-medium">VIT University</p>
+      </div>
+      <div>
+        <img src="images/nit_tricky.png" alt="NIT Trichy" class="h-20 shadow rounded">
+        <p class="mt-2 font-medium">NIT Trichy</p>
+      </div>
+      <div>
+        <img src="images/uoh.png" alt="University of Hyderabad" class="h-20 shadow rounded">
+        <p class="mt-2 font-medium">University of Hyderabad</p>
+      </div>
+      <div>
+        <img src="images/OsmaniaUniversity.png" alt="Osmania University" class="h-20 shadow rounded">
+        <p class="mt-2 font-medium">Osmania University</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-6 bg-white shadow-inner mt-6">
+    <h2 class="text-2xl font-semibold mb-4 text-center">Our Social Media Reach</h2>
+    <div class="flex flex-col md:flex-row justify-around text-center gap-6">
+      <div class="p-4 bg-blue-100 rounded shadow">📘 Facebook: <strong>25,000+ followers</strong></div>
+      <div class="p-4 bg-purple-100 rounded shadow">📸 Instagram: <strong>18,000+ followers</strong></div>
+      <div class="p-4 bg-green-100 rounded shadow">🌐 Network: <strong>100+ partner institutions</strong></div>
+    </div>
+  </section>
+
+  <footer class="bg-blue-700 text-white text-center p-4 mt-6">
+    <p>&copy; 2025 Micro Information Technology Services | All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
